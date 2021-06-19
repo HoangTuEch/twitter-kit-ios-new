@@ -28,13 +28,6 @@
 
 @end
 
-/**
- Cycle inside DemoAppTests; building could produce unreliable results.
- Cycle details:
- → Target 'DemoAppTests': CodeSign /Users/akaffenberger/Library/Developer/Xcode/DerivedData/DemoApp-dlmzwecxqlixprblgzlcdbymvsti/Build/Products/Debug-iphonesimulator/DemoApp.app/EarlGrey.framework
- ○ That command depends on command in Target 'DemoAppTests': script phase “[CP] Embed Pods Frameworks”
- ○ Target 'DemoAppTests': CodeSign /Users/akaffenberger/Library/Developer/Xcode/DerivedData/DemoApp-dlmzwecxqlixprblgzlcdbymvsti/Build/Products/Debug-iphonesimulator/DemoApp.app/EarlGrey.framework
- */
 @interface TWTRWebViewControllerTests : TWTRTestCase
 
 @property (nonatomic) TWTRWebViewController *webVC;
