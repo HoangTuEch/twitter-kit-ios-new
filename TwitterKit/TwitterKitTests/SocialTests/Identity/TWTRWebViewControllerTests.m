@@ -26,10 +26,15 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
-}
-
 @end
 
+/**
+ Cycle inside DemoAppTests; building could produce unreliable results.
+ Cycle details:
+ → Target 'DemoAppTests': CodeSign /Users/akaffenberger/Library/Developer/Xcode/DerivedData/DemoApp-dlmzwecxqlixprblgzlcdbymvsti/Build/Products/Debug-iphonesimulator/DemoApp.app/EarlGrey.framework
+ ○ That command depends on command in Target 'DemoAppTests': script phase “[CP] Embed Pods Frameworks”
+ ○ Target 'DemoAppTests': CodeSign /Users/akaffenberger/Library/Developer/Xcode/DerivedData/DemoApp-dlmzwecxqlixprblgzlcdbymvsti/Build/Products/Debug-iphonesimulator/DemoApp.app/EarlGrey.framework
+ */
 @interface TWTRWebViewControllerTests : TWTRTestCase
 
 @property (nonatomic) TWTRWebViewController *webVC;

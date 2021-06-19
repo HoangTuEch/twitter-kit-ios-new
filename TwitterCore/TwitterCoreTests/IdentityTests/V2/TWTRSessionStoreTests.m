@@ -590,6 +590,7 @@
     @weakify(self);
     self.sessionStore.userSessionSavedCompletion = ^(id<TWTRAuthSession> session) {
         @strongify(self);
+        if (self.sessionStore) {}
         XCTAssertNotNil(session);
         [expectation fulfill];
     };

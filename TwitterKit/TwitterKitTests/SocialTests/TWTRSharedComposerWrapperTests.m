@@ -129,7 +129,7 @@ UIImage *videoThumbnail(NSURL *url);
     OCMExpect([mockComposer dismissViewControllerAnimated:YES completion:OCMOCK_ANY]);
 
     // Trigger dismiss
-    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet new]];
+    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet emptyTweet]];
 
     OCMVerifyAll(mockComposer);
 }
@@ -141,7 +141,7 @@ UIImage *videoThumbnail(NSURL *url);
 
     // Should have pending data, and then remove it
     XCTAssertNotNil(composer.networking.pendingVideoData);
-    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet new]];
+    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet emptyTweet]];
     XCTAssertNil(composer.networking.pendingVideoData);
 }
 
@@ -169,7 +169,7 @@ UIImage *videoThumbnail(NSURL *url);
     OCMExpect([mockDelegate composerDidCancel:OCMOCK_ANY]);
 
     // Trigger cancel
-    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet new]];
+    [composer shareViewControllerWantsToCancelComposerWithPartiallyComposedTweet:[TWTRSETweet emptyTweet]];
     OCMVerifyAll(mockDelegate);
 }
 

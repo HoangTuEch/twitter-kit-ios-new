@@ -42,7 +42,6 @@
 		379A6D1C1E95B71600625984 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379A6CFC1E95B71600625984 /* ViewExtensions.swift */; };
 		379A6D4B1E95B7CD00625984 /* libTwitterCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 379A6D241E95B77600625984 /* libTwitterCore.a */; };
 		379A6D4C1E95B7D100625984 /* libTwitterKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 379A6D321E95B77C00625984 /* libTwitterKit.a */; };
-		38332E74359FB37B95C5A102 /* EarlGrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C999C0B9EB4E603B864B0A /* EarlGrey.framework */; };
 		AA2B14C81F2BD49700880954 /* TweetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B14C71F2BD49700880954 /* TweetCollectionViewCell.swift */; };
 		AA34AC741FA2A426009EA9EB /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34AC731FA2A426009EA9EB /* DemoCollectionViewCell.swift */; };
 		AA34AC791FA38DCA009EA9EB /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA34AC781FA38DCA009EA9EB /* Demo.swift */; };
@@ -68,7 +67,7 @@
 		AAE1B2231FA9077500FA36F2 /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1B2221FA9077400FA36F2 /* UIAlertControllerExtensions.swift */; };
 		AAEE1AFF1FACCC8300F11160 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEE1AF81FACCC8300F11160 /* SafariServices.framework */; };
 		DAD36277BBE422A494BBEF34 /* Pods_DemoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6B1411DB662634BE0D19F0 /* Pods_DemoAppTests.framework */; };
-		E614AD4CB5CD2B7BFC7A85D3 /* EarlGrey.framework in EarlGrey Copy Files */ = {isa = PBXBuildFile; fileRef = E7C999C0B9EB4E603B864B0A /* EarlGrey.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		E614AD4CB5CD2B7BFC7A85D3 /* EarlGrey.framework in EarlGrey Copy Files */ = {isa = PBXBuildFile; fileRef = E7C999C0B9EB4E603B864B0A /* EarlGrey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,7 +258,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38332E74359FB37B95C5A102 /* EarlGrey.framework in Frameworks */,
 				DAD36277BBE422A494BBEF34 /* Pods_DemoAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,8 +483,6 @@
 				379A6CA31E95B47300625984 /* Sources */,
 				379A6CA41E95B47300625984 /* Frameworks */,
 				379A6CA51E95B47300625984 /* Resources */,
-				5CC95A89CCCE654AA61DD03A /* [CP] Embed Pods Frameworks */,
-				DADBA983E9AF3AB8D69609B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -507,7 +503,6 @@
 				379A6CC11E95B47300625984 /* Resources */,
 				EE0BE018629DD8ED153A1F64 /* EarlGrey Copy Files */,
 				2ED58B3EEB5ADD287CE9AFAE /* [CP] Embed Pods Frameworks */,
-				552F865AFBDC07010AC075C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -647,13 +642,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2ED58B3EEB5ADD287CE9AFAE /* [CP] Embed Pods Frameworks */ = {
@@ -662,43 +660,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoAppTests/Pods-DemoAppTests-frameworks.sh",
+				"${PODS_ROOT}/EarlGrey/EarlGrey/EarlGrey.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EarlGrey.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoAppTests/Pods-DemoAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		552F865AFBDC07010AC075C4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoAppTests/Pods-DemoAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5CC95A89CCCE654AA61DD03A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoAppTests/Pods-DemoAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F0835A6DCA75B971207E8EB /* [CP] Check Pods Manifest.lock */ = {
@@ -707,28 +678,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DADBA983E9AF3AB8D69609B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoApp/Pods-DemoApp-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -865,6 +824,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -910,6 +870,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -932,6 +893,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoApp/DemoApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -953,6 +915,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DemoApp/DemoApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -967,6 +930,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = twitter.DemoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -981,6 +945,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = twitter.DemoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};

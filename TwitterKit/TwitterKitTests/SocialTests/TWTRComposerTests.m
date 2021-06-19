@@ -72,9 +72,11 @@
     // Set up mock hierarchy
     id mockController = OCMClassMock([TWTRComposerViewController class]);
     OCMStub([mockController alloc]).andReturn(mockController);
+    
+    TWTRComposerViewController *controller = [[TWTRComposerViewController alloc] initWithInitialText:@"Text" image:nil videoData:nil];
 
     // Expect that the text is passed along
-    OCMExpect([mockController initWithInitialText:@"Initial" image:OCMOCK_ANY videoURL:nil]).andReturn([TWTRComposerViewController emptyComposer]);
+    OCMExpect([mockController initWithInitialText:@"Initial" image:OCMOCK_ANY videoURL:nil]).andReturn(controller);
 
     // Verify
     [composer showFromViewController:[[UIViewController alloc] init]
@@ -91,8 +93,10 @@
 
     id mockController = OCMClassMock([TWTRComposerViewController class]);
     OCMStub([mockController alloc]).andReturn(mockController);
+    
+    TWTRComposerViewController *controller = [[TWTRComposerViewController alloc] initWithInitialText:@"Text" image:nil videoData:nil];
 
-    OCMExpect([mockController initWithInitialText:@"http://test.com" image:OCMOCK_ANY videoURL:nil]).andReturn([TWTRComposerViewController emptyComposer]);
+    OCMExpect([mockController initWithInitialText:@"http://test.com" image:OCMOCK_ANY videoURL:nil]).andReturn(controller);
 
     [composer showFromViewController:[[UIViewController alloc] init]
                           completion:^(TWTRComposerResult result){
@@ -111,7 +115,9 @@
     id mockController = OCMClassMock([TWTRComposerViewController class]);
     OCMStub([mockController alloc]).andReturn(mockController);
 
-    OCMExpect([mockController initWithInitialText:@"Initial http://test.com" image:OCMOCK_ANY videoURL:nil]).andReturn([TWTRComposerViewController emptyComposer]);
+    TWTRComposerViewController *controller = [[TWTRComposerViewController alloc] initWithInitialText:@"Text" image:nil videoData:nil];
+    
+    OCMExpect([mockController initWithInitialText:@"Initial http://test.com" image:OCMOCK_ANY videoURL:nil]).andReturn(controller);
 
     [composer showFromViewController:[[UIViewController alloc] init]
                           completion:^(TWTRComposerResult result){
@@ -129,7 +135,9 @@
     id mockController = OCMClassMock([TWTRComposerViewController class]);
     OCMStub([mockController alloc]).andReturn(mockController);
 
-    OCMExpect([mockController initWithInitialText:OCMOCK_ANY image:[TWTRImages verifiedIcon] videoURL:nil]).andReturn([TWTRComposerViewController emptyComposer]);
+    TWTRComposerViewController *controller = [[TWTRComposerViewController alloc] initWithInitialText:@"Text" image:nil videoData:nil];
+    
+    OCMExpect([mockController initWithInitialText:OCMOCK_ANY image:[TWTRImages verifiedIcon] videoURL:nil]).andReturn(controller);
 
     [composer showFromViewController:[[UIViewController alloc] init]
                           completion:^(TWTRComposerResult result){
@@ -145,8 +153,10 @@
 
     id mockController = OCMClassMock([TWTRComposerViewController class]);
     OCMStub([mockController alloc]).andReturn(mockController);
+    
+    TWTRComposerViewController *controller = [[TWTRComposerViewController alloc] initWithInitialText:@"Text" image:nil videoData:nil];
 
-    OCMExpect([mockController initWithInitialText:nil image:nil videoURL:nil]).andReturn([TWTRComposerViewController emptyComposer]);
+    OCMExpect([mockController initWithInitialText:nil image:nil videoURL:nil]).andReturn(controller);
 
     [composer showFromViewController:[[UIViewController alloc] init]
                           completion:^(TWTRComposerResult result){
@@ -225,8 +235,9 @@
                               [expectation fulfill];
                           }];
 
+    TWTRTweet *tweet = [[TWTRTweet tweetsWithJSONArray:nil] firstObject];
     // Run the action
-    [composer composerDidSucceed:[TWTRComposerViewController new] withTweet:[TWTRTweet new]];
+    [composer composerDidSucceed:[TWTRComposerViewController emptyComposer] withTweet:tweet];
 
     [self waitForExpectations:@[expectation] timeout:0];
 }
@@ -244,7 +255,7 @@
                           }];
 
     // Run the action
-    [composer composerDidCancel:[TWTRComposerViewController new]];
+    [composer composerDidCancel:[TWTRComposerViewController emptyComposer]];
 
     [self waitForExpectations:@[expectation] timeout:0];
 }
@@ -262,7 +273,7 @@
                           }];
 
     // Run the action
-    [composer composerDidFail:[TWTRComposerViewController new] withError:[NSError errorWithDomain:@"domain" code:0 userInfo:nil]];
+    [composer composerDidFail:[TWTRComposerViewController emptyComposer] withError:[NSError errorWithDomain:@"domain" code:0 userInfo:nil]];
 
     [self waitForExpectations:@[expectation] timeout:0];
 }
