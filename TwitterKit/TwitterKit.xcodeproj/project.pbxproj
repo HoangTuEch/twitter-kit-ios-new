@@ -669,6 +669,7 @@
 		DBFE5B351D14A57800C77F64 /* ExtendedTweet.json in Resources */ = {isa = PBXBuildFile; fileRef = DBFE5B2F1D146D0700C77F64 /* ExtendedTweet.json */; };
 		F5154B8519D4E6220054DECF /* TWTRComposer.h in Headers */ = {isa = PBXBuildFile; fileRef = F5154B8119D4E6130054DECF /* TWTRComposer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5154B8619D4E6220054DECF /* TWTRComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F5154B8219D4E6130054DECF /* TWTRComposer.m */; };
+		FDDC0AEA267E934700558EA9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDDC0AE9267E934700558EA9 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1338,6 +1339,7 @@
 		E67CFC701C84E6710045F8A2 /* xcconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcconfig; path = ../../../shared/xcconfig; sourceTree = "<group>"; };
 		F5154B8119D4E6130054DECF /* TWTRComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TWTRComposer.h; path = Social/Syndication/Controllers/TWTRComposer.h; sourceTree = "<group>"; };
 		F5154B8219D4E6130054DECF /* TWTRComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TWTRComposer.m; path = Social/Syndication/Controllers/TWTRComposer.m; sourceTree = "<group>"; };
+		FDDC0AE9267E934700558EA9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/iOSSupport/System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1345,6 +1347,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDC0AEA267E934700558EA9 /* WebKit.framework in Frameworks */,
 				AA3E099C20125EC600792255 /* MapKit.framework in Frameworks */,
 				AA3E099A20125EBC00792255 /* MobileCoreServices.framework in Frameworks */,
 				AA3E099920125E9100792255 /* CoreLocation.framework in Frameworks */,
@@ -1412,6 +1415,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB17A0C2335DC320078FDF3 /* WebKit.framework */,
+				FDDC0AE9267E934700558EA9 /* WebKit.framework */,
 				AA3E099B20125EC600792255 /* MapKit.framework */,
 				AA3E099120119CA500792255 /* MobileCoreServices.framework */,
 				AAF0C9F020119BED0057F438 /* MapKit.framework */,
@@ -3454,12 +3458,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../shared/\"",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.sdk.ios.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TwitterKitTests/TwitterKit Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -3473,12 +3479,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(PROJECT_DIR)/../shared/\"",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.twitter.sdk.ios.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TwitterKitTests/TwitterKit Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
+				VALIDATE_WORKSPACE = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -3510,6 +3518,7 @@
 					"$(BUILT_PRODUCTS_DIR)/Headers",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -3539,6 +3548,7 @@
 					"$(BUILT_PRODUCTS_DIR)/Headers",
 				);
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
@@ -3552,6 +3562,7 @@
 					"$(PROJECT_DIR)",
 				);
 				SDKROOT = iphoneos;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
 		};
@@ -3565,6 +3576,7 @@
 					"$(PROJECT_DIR)",
 				);
 				SDKROOT = iphoneos;
+				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
 		};
