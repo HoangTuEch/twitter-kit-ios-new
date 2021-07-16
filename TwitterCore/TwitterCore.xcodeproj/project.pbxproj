@@ -1728,6 +1728,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = io.twittercore.ios.test;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
@@ -1741,6 +1742,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = io.twittercore.ios.test;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_WORKSPACE = YES;
 			};
 			name = Release;
@@ -1758,6 +1760,7 @@
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1775,6 +1778,7 @@
 				INFOPLIST_FILE = "TwitterCore-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(TWC_BUNDLE_IDENTIFIER)";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
