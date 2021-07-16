@@ -3518,6 +3518,7 @@
 					"$(BUILT_PRODUCTS_DIR)/Headers",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				VALIDATE_WORKSPACE = YES;
 			};
 			name = Debug;
@@ -3547,6 +3548,7 @@
 					"$(TARGET_BUILD_DIR)/Headers",
 					"$(BUILT_PRODUCTS_DIR)/Headers",
 				);
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_WORKSPACE = YES;
 			};
