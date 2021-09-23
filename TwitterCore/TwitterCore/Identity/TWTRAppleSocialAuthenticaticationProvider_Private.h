@@ -22,13 +22,13 @@
 #import "TWTRAppleSocialAuthenticaticationProvider.h"
 
 #if IS_UIKIT_AVAILABLE
-@class UIActionSheet;
+@class UIAlertController;
 #endif
 
 @interface TWTRAppleSocialAuthenticaticationProvider (Private)
 
 #if IS_UIKIT_AVAILABLE
-- (UIActionSheet *)actionSheet;
+- (UIAlertController *)actionSheet;
 #endif
 
 @end
