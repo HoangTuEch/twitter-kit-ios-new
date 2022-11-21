@@ -787,7 +787,7 @@ static void *TSETweetTextKVOCOntext = &TSETweetTextKVOCOntext;
 
 - (void)locationSelectionTableViewController:(TWTRSELocationSelectionTableViewController *)locationSelectionTableViewController didSelectLocation:(id<TWTRSEGeoPlace>)location
 {
-    BOOL isChangedLocation = (!location.placeID && self.selectedGeoPlace.placeID) || (location.placeID && ![self.selectedGeoPlace.placeID isEqualToString:location.placeID]);
+    BOOL isChangedLocation = (!location.placementID && self.selectedGeoPlace.placementID) || (location.placementID && ![self.selectedGeoPlace.placementID isEqualToString:location.placementID]);
     if (isChangedLocation) {
         self.selectedGeoPlace = location;
     }

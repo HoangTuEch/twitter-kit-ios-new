@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TWTRSEGeoPlace <NSObject>
 
-@property (nonatomic, readonly, copy) NSString *placeID;
+@property (nonatomic, readonly, copy) NSString *placementID;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, nullable, copy) NSString *address;
 

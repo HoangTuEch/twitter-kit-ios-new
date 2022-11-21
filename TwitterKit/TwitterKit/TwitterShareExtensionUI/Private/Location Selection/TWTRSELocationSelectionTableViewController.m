@@ -205,7 +205,7 @@ static const CGFloat kMapViewHeaderHeight = 125.0;
         } else {
             id<TWTRSEGeoPlace> place = [self geoPlaceForRowAtIndexPath:indexPath];
 
-            [cell configureWithPlace:place selected:[place.placeID isEqualToString:self.selectedPlace.placeID]];
+            [cell configureWithPlace:place selected:[place.placementID isEqualToString:self.selectedPlace.placementID]];
         }
 
         return cell;
